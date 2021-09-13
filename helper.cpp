@@ -34,12 +34,13 @@ return NULL;
 
 char *find_first_in_the_string_that_is_in_the_set(char *str, const char *set){   
     while (*str != '\0'){
-        while (*set != '\0'){
-            if ( *str == *set){
+        const char *current = set;
+        while (*current != '\0'){
+            if ( *str == *current){
                 return str;
             }
             else{
-                set++;
+                current++;
             }
         }
         str++;
